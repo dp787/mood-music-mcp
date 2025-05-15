@@ -1,65 +1,109 @@
-# Mood Music MCP Server
+# 🎵 Mood Music Explorer
 
-A sophisticated MCP (Message Control Protocol) server that provides mood-based music recommendations. This project combines the power of sentiment analysis, the Spotify API, and a custom MCP protocol to deliver personalized music suggestions based on your emotional state.
+A modern application that recommends music based on your mood using AI. This project uses OpenAI's GPT model to provide personalized song recommendations that match your emotional state.
 
-## Features
+## ✨ Features
 
-- 🎵 Mood-based music recommendations
-- 🤖 Natural language mood processing
-- 🎯 Spotify API integration
-- 💻 Beautiful desktop client interface
-- 🔄 Custom MCP protocol implementation
+- 🎯 Real-time mood-based music recommendations
+- 🤖 AI-powered song suggestions using OpenAI's GPT model
+- 💫 Modern, user-friendly interface
+- 🔄 WebSocket-based real-time communication
+- 🎨 Beautiful dark theme design
 
-## MCP Protocol Commands
+## 🚀 Getting Started
 
-The server accepts the following commands:
+### Prerequisites
 
-- `MOOD <mood>` - Get music recommendations based on a mood
-- `GENRE <genre>` - Filter recommendations by genre
-- `ARTIST <artist_name>` - Get mood-related songs from a specific artist
-- `RANDOM` - Get random mood-based suggestions
+- Python 3.8 or higher
+- OpenAI API key
 
-## Setup
+### Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/music-mcp.git
-cd music-mcp
+git clone https://github.com/dp787/mood-music-mcp.git
+cd mood-music-mcp
 ```
 
-2. Install dependencies:
+2. Install the required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Set up environment variables:
-Create a `.env` file with your Spotify API credentials:
-```
-SPOTIFY_CLIENT_ID=your_client_id
-SPOTIFY_CLIENT_SECRET=your_client_secret
+3. Create a `.env` file in the root directory and add your OpenAI API key:
+```env
+OPENAI_API_KEY=your_api_key_here
 ```
 
-4. Start the server:
+### Running the Application
+
+1. Start the server and client using the run script:
 ```bash
-python -m server.main
+python run.py
 ```
 
-5. Launch the client:
-```bash
-python -m client.main
-```
+This will:
+- Start the WebSocket server
+- Launch the GUI client
+- Automatically connect the client to the server
 
-## Architecture
+## 🎮 How to Use
 
-- `server/` - MCP server implementation using FastAPI
-- `client/` - Desktop client application
-- `models/` - Data models and sentiment analysis
-- `utils/` - Helper functions and utilities
+1. Once the application starts, you'll see the main window with a status indicator
+2. Enter your current mood in the text field (e.g., "happy", "melancholic", "energetic")
+3. Click "Get Recommendations" or press Enter
+4. The application will display 5 song recommendations that match your mood, including:
+   - Song name
+   - Artist
+   - Why the song matches your mood
 
-## Contributing
+## 🏗️ Architecture
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+The project consists of two main components:
 
-## License
+### Server (`server/main.py`)
+- FastAPI WebSocket server
+- OpenAI integration for music recommendations
+- Asynchronous request handling
+- Port auto-discovery
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+### Client (`client/main.py`)
+- Modern Tkinter-based GUI
+- Real-time WebSocket communication
+- Beautiful dark theme interface
+- Responsive design
+
+## 🛠️ Technical Details
+
+- **Backend Framework**: FastAPI
+- **Frontend**: Tkinter with custom styling
+- **AI Integration**: OpenAI GPT-3.5 Turbo
+- **Communication**: WebSocket protocol
+- **Async Support**: asyncio and websockets
+- **Error Handling**: Comprehensive error management
+
+## 🎨 UI Features
+
+- Dark theme with modern color scheme
+- Responsive text areas
+- Status indicators
+- Loading states
+- Formatted song recommendations
+- Error handling with visual feedback
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+- Report bugs
+- Suggest features
+- Submit pull requests
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+## 🙏 Acknowledgments
+
+- OpenAI for their powerful GPT API
+- FastAPI for the efficient web framework
+- The Python community for excellent libraries 
